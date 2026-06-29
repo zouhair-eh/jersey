@@ -15,17 +15,24 @@
     flex-direction: row;
     height: 300px;
     width: 100%;
+    justify-content: center;
   }
 
   .option {
-    min-width: 32px;
+    min-width: unset;
+    width: 36px;
+    flex-grow: 0;
+    flex-shrink: 0;
     margin: 4px;
     border-radius: 18px;
     background-size: cover;
+    transition: width 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), border-radius 0.5s, margin 0.5s;
   }
 
   .option.active {
-    flex-grow: 10000;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 180px;
     max-width: 65%;
     margin: 0px;
     border-radius: 20px;
@@ -33,7 +40,8 @@
   }
 
   .option:not(.active) {
-    flex-grow: 1;
+    flex-grow: 0;
+    width: 36px;
   }
 
   /* Smaller label and icon sizes for mobile */
