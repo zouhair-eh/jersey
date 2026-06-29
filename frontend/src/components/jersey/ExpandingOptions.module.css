@@ -19,21 +19,48 @@
   .option {
     min-width: unset;
     width: 100%;
-    min-height: 55px;
-    margin: 4px 0;
-    border-radius: 20px;
+    min-height: 42px;
+    margin: 3px 0;
+    border-radius: 14px;
+    background-size: cover;
   }
 
   .option.active {
     flex-grow: 10000;
     max-width: unset;
-    max-height: 280px;
+    max-height: 320px;
     margin: 4px 0;
-    border-radius: 24px;
+    border-radius: 20px;
+    background-size: cover;
   }
 
   .option:not(.active) {
     flex-grow: 1;
+  }
+
+  /* Center icon vertically inside collapsed cards */
+  .label {
+    height: 32px;
+  }
+
+  .icon {
+    min-width: 32px;
+    max-width: 32px;
+    height: 32px;
+  }
+
+  .option:not(.active) .label {
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    bottom: unset;
+  }
+
+  .option.active .label {
+    bottom: 12px;
+    left: 12px;
+    top: unset;
+    transform: unset;
   }
 }
 
@@ -47,6 +74,7 @@
   background: var(--optionBackground, var(--defaultBackground, #e6e9ed));
   background-size: auto 120%;
   background-position: center;
+  background-repeat: no-repeat;
 
   cursor: pointer;
   border-radius: 30px;
