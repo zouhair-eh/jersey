@@ -9,27 +9,25 @@
   height: 400px;
 }
 
-/* mobile vertical accordion layout */
+/* mobile horizontal layout - scaled down */
 @media screen and (max-width: 767px) {
   .options {
-    flex-direction: column;
-    height: 500px;
+    flex-direction: row;
+    height: 300px;
+    width: 100%;
   }
 
   .option {
-    min-width: unset;
-    width: 100%;
-    min-height: 42px;
-    margin: 3px 0;
-    border-radius: 14px;
+    min-width: 32px;
+    margin: 4px;
+    border-radius: 18px;
     background-size: cover;
   }
 
   .option.active {
     flex-grow: 10000;
-    max-width: unset;
-    max-height: 320px;
-    margin: 4px 0;
+    max-width: 65%;
+    margin: 0px;
     border-radius: 20px;
     background-size: cover;
   }
@@ -38,7 +36,7 @@
     flex-grow: 1;
   }
 
-  /* Center icon vertically inside collapsed cards */
+  /* Smaller label and icon sizes for mobile */
   .label {
     height: 32px;
   }
@@ -49,11 +47,12 @@
     height: 32px;
   }
 
+  /* Center icon horizontally inside thin collapsed options */
   .option:not(.active) .label {
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    bottom: unset;
+    left: 50%;
+    bottom: 12px;
+    transform: translateX(-50%);
+    right: unset;
   }
 
   .option.active .label {
