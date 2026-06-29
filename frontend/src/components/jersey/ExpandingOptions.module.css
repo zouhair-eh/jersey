@@ -65,7 +65,8 @@
   display: flex;
   position: absolute;
   right: 0;
-  height: 40px;
+  height: auto;
+  align-items: center;
   transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 
@@ -103,19 +104,24 @@
   white-space: pre;
 }
 
-.info > div {
+.info > div,
+.info > a {
   position: relative;
   transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
 }
 
-.option.active .info > div {
+.option.active .info > div,
+.option.active .info > a {
   left: 0;
   opacity: 1;
+  pointer-events: auto;
 }
 
-.option:not(.active) .info > div {
+.option:not(.active) .info > div,
+.option:not(.active) .info > a {
   left: 20px;
   opacity: 0;
+  pointer-events: none;
 }
 
 .main {
@@ -125,6 +131,30 @@
 
 .sub {
   transition-delay: 0.1s;
+}
+
+.orderBtn {
+  margin-top: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  background-color: #00FF87;
+  color: #0A0A0F !important;
+  font-weight: bold;
+  font-size: 0.7rem;
+  border-radius: 6px;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(0, 255, 135, 0.2);
+  transition: all 0.2s ease;
+  width: fit-content;
+  pointer-events: auto;
+}
+
+.orderBtn:hover {
+  background-color: #00DD75;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0, 255, 135, 0.45);
 }
 
 /* mobile horizontal layout - scaled down */
@@ -164,7 +194,7 @@
 
   /* Smaller label and icon sizes for mobile */
   .label {
-    height: 32px;
+    height: auto;
   }
 
   .icon {

@@ -86,6 +86,15 @@ export default function ExpandingOptions({ options = DEFAULT_OPTIONS }: Props) {
               <div className={styles.info}>
                 <div className={styles.main}>{opt.main}</div>
                 <div className={styles.sub}>{opt.sub}</div>
+                <a
+                  href={`https://wa.me/212620786961?text=${encodeURIComponent(`Salam, bghit n-commander: ${opt.main} (${opt.sub})`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.orderBtn}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  Commander
+                </a>
               </div>
             </div>
           </div>
