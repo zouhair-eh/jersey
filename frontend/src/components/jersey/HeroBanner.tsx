@@ -104,7 +104,7 @@ export default function HeroBanner() {
             >
               <button
                 onClick={scrollToShop}
-                className="flex items-center justify-center gap-2 px-8 py-4 bg-[#00FF87] hover:bg-[#00DD75] text-[#0A0A0F] font-bold rounded-lg text-base transition-all duration-200 shadow-[0_0_20px_rgba(0,255,135,0.4)] hover:shadow-[0_0_30px_rgba(0,255,135,0.6)] hover:-translate-y-0.5"
+                className="sweep-shine flex items-center justify-center gap-2 px-8 py-4 bg-[#00FF87] hover:bg-[#00DD75] text-[#0A0A0F] font-bold rounded-lg text-base transition-all duration-200 shadow-[0_0_20px_rgba(0,255,135,0.4)] hover:shadow-[0_0_30px_rgba(0,255,135,0.6)] hover:-translate-y-0.5"
               >
                 <ShoppingBag size={18} />
                 SHOP NOW

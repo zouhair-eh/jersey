@@ -76,7 +76,7 @@ export default function HomePage() {
               href={WA_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-[#0A0A0F] hover:bg-[#12121A] text-white font-bold text-base rounded-xl transition-all duration-200 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_4px_30px_rgba(0,0,0,0.6)] hover:-translate-y-0.5"
+              className="sweep-shine inline-flex items-center gap-3 px-8 py-4 bg-[#0A0A0F] hover:bg-[#12121A] text-white font-bold text-base rounded-xl transition-all duration-200 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_4px_30px_rgba(0,0,0,0.6)] hover:-translate-y-0.5"
             >
               <MessageCircle size={20} />
               Commander Maintenant

@@ -199,3 +199,31 @@ button {
   15% { stroke-dashoffset: 5800px; }
   100% { stroke-dashoffset: 0; }
 }
+
+/* ── Sweep Shine Animation for CTA Buttons ──────────────────────────────── */
+.sweep-shine {
+  position: relative;
+  overflow: hidden;
+}
+.sweep-shine::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 30%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent
+  );
+  transform: rotate(25deg);
+  animation: sweep 4.5s infinite ease-in-out;
+}
+
+@keyframes sweep {
+  0% { left: -60%; }
+  25% { left: 140%; }
+  100% { left: 140%; }
+}

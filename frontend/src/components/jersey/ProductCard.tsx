@@ -1,6 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { Plus } from 'lucide-react';
 
 export type BadgeType = 'HOT' | 'NEW' | 'LIMITED' | null;
@@ -32,16 +33,62 @@ export default function ProductCard({
   onAdd,
   onClick,
 }: ProductCardProps) {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const x = useMotionValue(0.5);
+  const y = useMotionValue(0.5);
+
+  const rotateX = useTransform(y, [0, 1], [10, -10]);
+  const rotateY = useTransform(x, [0, 1], [-10, 10]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (isMobile) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    x.set((e.clientX - rect.left) / rect.width);
+    y.set((e.clientY - rect.top) / rect.height);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0.5);
+    y.set(0.5);
+  };
+
+  const shineBg = useTransform(
+    [x, y],
+    ([latestX, latestY]) =>
+      `radial-gradient(circle at ${Number(latestX) * 100}% ${Number(latestY) * 100}%, rgba(255,255,255,0.14) 0%, transparent 60%)`
+  );
+
   return (
     <motion.div
       onClick={onClick}
-      className="group relative flex flex-col overflow-hidden rounded-xl bg-[#1A1A26] border border-white/[0.08] cursor-pointer transition-all duration-300 hover:border-[#00FF87]/50 hover:-translate-y-1.5"
-      style={{ '--tw-shadow': '' } as React.CSSProperties}
-      whileHover={{ boxShadow: '0 0 24px rgba(0,255,135,0.25)' }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="group relative flex flex-col overflow-hidden rounded-xl bg-[#1A1A26] border border-white/[0.08] cursor-pointer transition-all duration-300 hover:border-[#00FF87]/50"
+      style={{
+        rotateX: isMobile ? 0 : rotateX,
+        rotateY: isMobile ? 0 : rotateY,
+        transformStyle: 'preserve-3d',
+        perspective: 1000,
+      }}
+      whileHover={isMobile ? {} : { boxShadow: '0 0 24px rgba(0,255,135,0.25)', y: -6 }}
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35 }}
     >
+      {/* Glossy reflection effect */}
+      {!isMobile && (
+        <motion.div
+          className="pointer-events-none absolute inset-0 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          style={{ background: shineBg }}
+        />
+      )}
       {/* Badge */}
       {badge && (
         <div
