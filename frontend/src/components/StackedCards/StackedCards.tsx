@@ -1,44 +1,43 @@
 'use client';
 
-import { useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 // ─── Card Data ───────────────────────────────────────────────────────────────
-// Customize this array to change card content, tags, and image placeholder tint
 const CARDS: CardItem[] = [
   {
     id:          1,
-    tag:         '01 — Design',
-    headline:    'Precision-crafted for the obsessive.',
-    description: 'Every pixel deliberate. Every detail a decision. We build digital products that feel as sharp as they look — built on systems, not accidents.',
-    cta:         'Explore Design',
+    tag:         '01 — QUALITÉ PREMIUM',
+    headline:    'Des maillots officiels en version Premium.',
+    description: 'Tissus respirants de haute technologie, logos brodés avec précision, et finitions identiques aux maillots portés par les joueurs professionnels sur le terrain.',
+    cta:         'Découvrir la Qualité',
     accent:      '#00FF87',
     imageTint:   'from-emerald-950/60 to-zinc-950',
   },
   {
     id:          2,
-    tag:         '02 — Motion',
-    headline:    'Interfaces that breathe and respond.',
-    description: 'Animation isn\'t decoration — it\'s communication. We choreograph every transition so users feel the product before they understand it.',
-    cta:         'See Motion Work',
+    tag:         '02 — SUPPORT WhatsApp',
+    headline:    'Commandez en direct avec nos conseillers.',
+    description: 'Pas de formulaires complexes. Discutez en direct avec nous sur WhatsApp pour valider votre taille, vérifier le stock, et suivre votre commande en temps réel.',
+    cta:         'Discuter sur WhatsApp',
     accent:      '#FF3D3D',
     imageTint:   'from-red-950/60 to-zinc-950',
   },
   {
     id:          3,
-    tag:         '03 — Engineering',
-    headline:    'Performance with no excuses.',
-    description: 'Sub-100ms interactions. Zero layout shift. Code that ships fast and stays maintainable. Beautiful products shouldn\'t cost you speed.',
-    cta:         'View Engineering',
+    tag:         '03 — LIVRAISON RAPIDE',
+    headline:    'Livraison Express 24h/48h partout au Maroc.',
+    description: 'Recevez votre colis directement chez vous ou f point relais en un temps record dans toutes les villes du Maroc (Casablanca, Rabat, Marrakech, Tanger...).',
+    cta:         'Zones de Livraison',
     accent:      '#C8A84B',
     imageTint:   'from-amber-950/60 to-zinc-950',
   },
   {
     id:          4,
-    tag:         '04 — Strategy',
-    headline:    'Vision aligned with execution.',
-    description: 'Great products begin with ruthless clarity. We map user goals to business outcomes, then build the shortest path between them.',
-    cta:         'Learn Strategy',
+    tag:         '04 — CONFIANCE GARANTIE',
+    headline:    'Paiement à la livraison après inspection.',
+    description: 'Achetez l\'esprit tranquille. Vous ne payez qu\'au moment de la réception, après avoir inspecté et validé la qualité de votre nouveau maillot de football.',
+    cta:         'Nos Engagements',
     accent:      '#818CF8',
     imageTint:   'from-violet-950/60 to-zinc-950',
   },
@@ -67,6 +66,14 @@ function StickyCard({
   containerRef: React.RefObject<HTMLDivElement>;
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Each card tracks its own scroll progress within the container
   const { scrollYProgress } = useScroll({
@@ -95,20 +102,28 @@ function StickyCard({
   const TOP_OFFSET  = 80;   // px from viewport top
   const CARD_INDENT = 14;   // px shift per card in the stack
 
+  const stickyStyles = isMobile
+    ? {
+        position: 'relative' as const,
+        top: '0px',
+        scale: 1,
+        opacity: 1,
+      }
+    : {
+        scale,
+        opacity,
+        top:      `${TOP_OFFSET + index * CARD_INDENT}px`,
+        position: 'sticky' as const,
+      };
+
   return (
     <div
-      style={{ height: '100vh' }}
-      className="sticky"
-      // Each card's sticky top is staggered so the stack peeks through
+      style={{ height: isMobile ? 'auto' : '100vh' }}
+      className={isMobile ? 'py-4' : 'sticky'}
       ref={cardRef}
     >
       <motion.div
-        style={{
-          scale,
-          opacity,
-          top:      `${TOP_OFFSET + index * CARD_INDENT}px`,
-          position: 'sticky',
-        }}
+        style={stickyStyles}
         className="
           mx-auto w-full max-w-5xl
           rounded-2xl overflow-hidden
@@ -164,11 +179,6 @@ function StickyCard({
           </div>
 
           {/* ── Image placeholder pane ────────────────────────────────── */}
-          {/*
-            DROP YOUR ASSET HERE:
-            Replace this div with <Image src="..." /> or <video /> etc.
-            The gradient tint is set per-card via `card.imageTint`.
-          */}
           <div
             className={`
               relative flex items-center justify-center
@@ -185,7 +195,7 @@ function StickyCard({
               flex items-center justify-center
             ">
               <span className="text-xs font-mono text-white/20 tracking-widest uppercase">
-                Asset
+                Maillot
               </span>
             </div>
 
@@ -229,27 +239,35 @@ function StickyCard({
 // ─── Main Export ─────────────────────────────────────────────────────────────
 export default function StackedCards() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   return (
     <section className="relative bg-[#0A0A0F] px-4 md:px-8">
 
       {/* Section header */}
-      <div className="mx-auto max-w-5xl py-24 md:py-32">
+      <div className="mx-auto max-w-5xl py-16 md:py-32">
         <p className="text-xs font-mono tracking-widest uppercase text-white/30 mb-4">
-          What we do
+          Nos points forts
         </p>
         <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight max-w-xl">
-          Built for those
+          Le maillot parfait,
           <br />
-          <span className="text-white/30">who notice everything.</span>
+          <span className="text-white/30">sans compromis.</span>
         </h1>
       </div>
 
       {/* Sticky scroll container — height drives the scroll distance */}
       <div
         ref={containerRef}
-        style={{ height: `${CARDS.length * 100}vh` }}
-        className="relative"
+        style={{ height: isMobile ? 'auto' : `${CARDS.length * 100}vh` }}
+        className="relative flex flex-col gap-6 md:block"
       >
         {CARDS.map((card, i) => (
           <StickyCard
@@ -263,7 +281,7 @@ export default function StackedCards() {
       </div>
 
       {/* Spacer after stack */}
-      <div className="h-32 md:h-48" />
+      <div className={isMobile ? 'h-16' : 'h-32 md:h-48'} />
     </section>
   );
 }

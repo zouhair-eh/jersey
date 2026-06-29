@@ -111,7 +111,7 @@ export default function TrendingSection() {
         {/* Grid */}
         <motion.div
           key={activeFilter}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
+          className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4"
           variants={container}
           initial="hidden"
           animate="show"

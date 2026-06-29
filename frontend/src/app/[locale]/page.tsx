@@ -23,7 +23,7 @@ export default function HomePage() {
       <SocialProofStrip />
 
       {/* 3 — Expanding option cards */}
-      <section className="flex justify-center items-center py-16 bg-[#0A0A0F]">
+      <section className="flex justify-center items-center py-16 px-4 bg-[#0A0A0F]">
         <ExpandingOptions />
       </section>
 

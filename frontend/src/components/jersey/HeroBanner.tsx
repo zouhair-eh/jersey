@@ -122,20 +122,20 @@ export default function HeroBanner() {
 
             {/* Stats row */}
             <motion.div
-              className="flex items-center gap-6 justify-center lg:justify-start mt-10"
+              className="grid grid-cols-3 gap-2 sm:flex sm:items-center sm:gap-6 sm:justify-start justify-center mt-10"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
               {STATS.map(({ icon: Icon, value, label }, i) => (
-                <div key={i} className="flex items-center gap-2">
+                <div key={i} className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 justify-center sm:justify-start text-center sm:text-left">
                   <Icon size={16} className="text-[#00FF87] flex-shrink-0" />
-                  <div>
-                    <span className="text-white font-bold text-base">{value}</span>
-                    <span className="text-[#A0A0B0] text-xs ml-1">{label}</span>
+                  <div className="flex flex-col sm:block">
+                    <span className="text-white font-bold text-xs sm:text-base whitespace-nowrap">{value}</span>
+                    <span className="text-[#A0A0B0] text-[9px] sm:text-xs sm:ml-1 block sm:inline whitespace-nowrap uppercase tracking-wider sm:normal-case sm:tracking-normal">{label}</span>
                   </div>
                   {i < STATS.length - 1 && (
-                    <div className="w-px h-8 bg-white/[0.12] ml-4" />
+                    <div className="hidden sm:block w-px h-8 bg-white/[0.12] ml-4" />
                   )}
                 </div>
               ))}

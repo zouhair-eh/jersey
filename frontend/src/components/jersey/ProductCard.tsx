@@ -74,17 +74,17 @@ export default function ProductCard({
       </div>
 
       {/* Info */}
-      <div className="flex flex-col gap-1.5 p-4 flex-1">
-        <p className="text-[#A0A0B0] text-xs font-medium tracking-wide uppercase">
+      <div className="flex flex-col gap-1 sm:gap-1.5 p-3 sm:p-4 flex-1">
+        <p className="text-[#A0A0B0] text-[10px] sm:text-xs font-medium tracking-wide uppercase">
           {club}
         </p>
-        <h3 className="text-white font-semibold text-sm leading-snug line-clamp-2 min-h-[2.5rem]">
+        <h3 className="text-white font-semibold text-xs sm:text-sm leading-snug line-clamp-2 min-h-[2rem] sm:min-h-[2.5rem]">
           {name}
         </h3>
 
-        <div className="flex items-center justify-between mt-auto pt-3">
+        <div className="flex items-center justify-between mt-auto pt-2">
           <span
-            className="text-[#00FF87] font-bold text-xl"
+            className="text-[#00FF87] font-bold text-lg sm:text-xl"
             style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.02em' }}
           >
             {price} MAD
@@ -92,10 +92,10 @@ export default function ProductCard({
 
           <button
             onClick={(e) => { e.stopPropagation(); onAdd?.(); }}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-lg border border-[#00FF87]/40 text-[#00FF87] text-xs font-bold tracking-wide hover:bg-[#00FF87] hover:text-[#0A0A0F] hover:border-[#00FF87] hover:shadow-[0_0_14px_rgba(0,255,135,0.5)] transition-all duration-200"
+            className="flex items-center justify-center p-2 sm:px-4 sm:py-2 rounded-lg border border-[#00FF87]/40 text-[#00FF87] hover:bg-[#00FF87] hover:text-[#0A0A0F] hover:border-[#00FF87] hover:shadow-[0_0_14px_rgba(0,255,135,0.5)] transition-all duration-200"
           >
             <Plus size={14} />
-            Ajouter
+            <span className="hidden sm:inline text-xs font-bold tracking-wide ml-1.5">Ajouter</span>
           </button>
         </div>
       </div>
