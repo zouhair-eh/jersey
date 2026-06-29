@@ -1,0 +1,190 @@
+/* ─────────────────────────────────────────────────────────────────────────── *
+ * LanguageSwitcher.module.css                                                  *
+ * Scoped CSS Module styles for the language switcher component.                *
+ * Uses CSS custom properties for easy theming.                                 *
+ * ─────────────────────────────────────────────────────────────────────────── */
+
+/* ── Wrapper ─────────────────────────────────────────────────────────────── */
+.wrapper {
+  position: relative;
+  display:  inline-flex;
+  align-items: center;
+}
+
+/* Dim the button while a locale transition is in flight */
+.wrapper[data-pending] {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* ── Trigger button ──────────────────────────────────────────────────────── */
+.trigger {
+  display:      flex;
+  align-items:  center;
+  gap:          0.4rem;
+  padding:      0.45rem 0.8rem;
+  border:       1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;             /* pill shape */
+  background:   rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  color:        inherit;
+  font-size:    0.875rem;
+  font-weight:  500;
+  cursor:       pointer;
+  transition:   background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  white-space:  nowrap;
+}
+
+.trigger:hover {
+  background:   rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow:   0 0 0 3px rgba(99, 102, 241, 0.25); /* indigo glow */
+}
+
+.trigger:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+/* ── Flag emoji ──────────────────────────────────────────────────────────── */
+.flag {
+  font-size: 1.1rem;
+  line-height: 1;
+  /* Prevent emoji from inheriting RTL mirroring */
+  unicode-bidi: isolate;
+}
+
+/* ── Current locale label ────────────────────────────────────────────────── */
+.currentLabel {
+  letter-spacing: 0.01em;
+}
+
+/* ── Chevron ─────────────────────────────────────────────────────────────── */
+.chevron {
+  display:    inline-block;
+  font-size:  0.75rem;
+  margin-inline-start: 0.1rem;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  /* unicode-bidi keeps the ▾ from flipping in RTL */
+  unicode-bidi: isolate;
+}
+
+.chevron[data-open] {
+  transform: rotate(180deg);
+}
+
+/* ── Dropdown list ───────────────────────────────────────────────────────── */
+.dropdown {
+  position:         absolute;
+  top:              calc(100% + 0.5rem);
+  /* In LTR: align to right edge; in RTL: align to left edge (via inset-inline-end) */
+  inset-inline-end: 0;
+  z-index:          50;
+
+  min-width:        160px;
+  list-style:       none;
+  margin:           0;
+  padding:          0.4rem;
+
+  border:           1px solid rgba(255, 255, 255, 0.14);
+  border-radius:    12px;
+  background:       rgba(15, 15, 30, 0.92);
+  backdrop-filter:  blur(16px);
+  box-shadow:       0 8px 32px rgba(0, 0, 0, 0.45),
+                    0 0 0 1px rgba(99, 102, 241, 0.15);
+
+  /* Entrance animation */
+  animation: dropdownIn 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes dropdownIn {
+  from {
+    opacity:   0;
+    transform: translateY(-6px) scale(0.97);
+  }
+  to {
+    opacity:   1;
+    transform: translateY(0)    scale(1);
+  }
+}
+
+/* ── Individual option ───────────────────────────────────────────────────── */
+.option {
+  display:        flex;
+  align-items:    center;
+  gap:            0.55rem;
+  width:          100%;
+  padding:        0.5rem 0.7rem;
+  border:         none;
+  border-radius:  8px;
+  background:     transparent;
+  color:          rgba(255, 255, 255, 0.8);
+  font-size:      0.875rem;
+  font-weight:    400;
+  cursor:         pointer;
+  text-align:     start;             /* respects RTL automatically */
+  transition:     background 0.15s ease, color 0.15s ease;
+}
+
+.option:hover:not(:disabled) {
+  background: rgba(99, 102, 241, 0.2);
+  color:      #fff;
+}
+
+/* Active (selected) locale */
+.option[data-active] {
+  color:       #a5b4fc;              /* indigo-300 */
+  font-weight: 600;
+  cursor:      default;
+}
+
+.option:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: -2px;
+}
+
+/* ── Option label ────────────────────────────────────────────────────────── */
+.optionLabel {
+  flex: 1;
+}
+
+/* ── Active check ────────────────────────────────────────────────────────── */
+.activeCheck {
+  color:     #6366f1;
+  font-size: 0.85rem;
+  margin-inline-start: auto;
+}
+
+/* ── RTL badge ───────────────────────────────────────────────────────────── */
+.rtlBadge {
+  font-size:     0.6rem;
+  font-weight:   700;
+  letter-spacing: 0.06em;
+  padding:       2px 5px;
+  border-radius: 4px;
+  background:    rgba(249, 115, 22, 0.2);  /* orange tint */
+  color:         #fb923c;
+  text-transform: uppercase;
+  /* Keep badge label direction-neutral */
+  unicode-bidi:  isolate;
+  direction:     ltr;
+}
+
+/* ── Pending spinner ─────────────────────────────────────────────────────── */
+.pendingSpinner {
+  position:      absolute;
+  inset-inline-end: -1.4rem;
+  top:           50%;
+  transform:     translateY(-50%);
+  display:       block;
+  width:         14px;
+  height:        14px;
+  border:        2px solid rgba(99, 102, 241, 0.3);
+  border-top-color: #6366f1;
+  border-radius: 50%;
+  animation:     spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: translateY(-50%) rotate(360deg); }
+}

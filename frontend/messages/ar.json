@@ -1,0 +1,155 @@
+{
+  "common": {
+    "app_name": "جيرسي المغرب",
+    "loading": "جارٍ التحميل...",
+    "error": "حدث خطأ ما",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "back": "رجوع",
+    "next": "التالي",
+    "see_all": "عرض الكل",
+    "search_placeholder": "ابحث..."
+  },
+
+  "nav": {
+    "home": "الرئيسية",
+    "catalog": "الكتالوج",
+    "experts": "الخبراء",
+    "about": "حولنا",
+    "contact": "التواصل",
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "logout": "تسجيل الخروج",
+    "my_profile": "ملفي الشخصي",
+    "my_orders": "طلباتي",
+    "language_switcher_label": "اللغة"
+  },
+
+  "landing": {
+    "hero": {
+      "welcome_message": "أهلاً بكم في جيرسي المغرب",
+      "tagline": "وجهتك المتميزة للقمصان الرياضية الأصيلة وخبراء الرياضة.",
+      "explore_catalog": "استعرض الكتالوج",
+      "contact_expert": "تواصل مع خبير",
+      "discover_more": "اكتشف المزيد"
+    },
+
+    "features": {
+      "heading": "لماذا تختارنا؟",
+      "authentic_jerseys": {
+        "title": "قمصان أصيلة",
+        "description": "قمصان رسمية من أفضل الأندية العالمية، تُوصَّل مباشرةً إلى المغرب."
+      },
+      "expert_guidance": {
+        "title": "إرشاد الخبراء",
+        "description": "تحدّث مع خبرائنا المتحمسين مباشرةً للعثور على القميص المثالي لك."
+      },
+      "fast_delivery": {
+        "title": "توصيل سريع",
+        "description": "توصيل سريع إلى أي مكان في المغرب خلال 24 إلى 48 ساعة."
+      },
+      "secure_payment": {
+        "title": "دفع آمن",
+        "description": "معاملات آمنة 100% مع قبول طرق دفع متعددة."
+      }
+    },
+
+    "catalog_preview": {
+      "heading": "أحدث القمصان",
+      "subheading": "اكتشف مجموعتنا الحصرية من القمصان الرياضية.",
+      "view_all_button": "عرض المجموعة الكاملة"
+    },
+
+    "experts_preview": {
+      "heading": "خبراؤنا",
+      "subheading": "متخصصون متحمسون جاهزون لإرشادك في خياراتك.",
+      "view_all_button": "عرض جميع الخبراء"
+    },
+
+    "newsletter": {
+      "heading": "ابقَ على اطلاع",
+      "subheading": "اشترك لتلقّي أحدث عروضنا وأخبارنا.",
+      "placeholder": "عنوان بريدك الإلكتروني",
+      "subscribe_button": "اشترك",
+      "success_message": "شكراً لك! لقد اشتركت الآن.",
+      "privacy_note": "نحن نحترم خصوصيتك."
+    },
+
+    "cta": {
+      "heading": "هل أنت مستعد للعثور على قميصك المثالي؟",
+      "subheading": "انضم إلى آلاف المشجعين الذين يثقون بنا.",
+      "primary_button": "ابدأ الآن",
+      "secondary_button": "اعرف المزيد"
+    }
+  },
+
+  "catalog": {
+    "heading": "الكتالوج",
+    "filters": {
+      "all_sizes": "جميع المقاسات",
+      "price_range": "نطاق السعر",
+      "sort_by": "ترتيب حسب",
+      "sort_newest": "الأحدث أولاً",
+      "sort_price_asc": "السعر: من الأقل إلى الأعلى",
+      "sort_price_desc": "السعر: من الأعلى إلى الأقل",
+      "sort_rating": "الأعلى تقييماً",
+      "clear_filters": "مسح الفلاتر"
+    },
+    "product_card": {
+      "add_to_cart": "أضف إلى السلة",
+      "out_of_stock": "نفد من المخزون",
+      "view_details": "عرض التفاصيل"
+    },
+    "no_results": "لا توجد منتجات تطابق بحثك."
+  },
+
+  "experts": {
+    "heading": "خبراؤنا",
+    "send_message": "إرسال رسالة",
+    "view_portfolio": "عرض الأعمال",
+    "languages_spoken": "اللغات المتحدَّث بها",
+    "reviews_count": "{count, plural, one {# تقييم} other {# تقييمات}}"
+  },
+
+  "auth": {
+    "login": {
+      "heading": "تسجيل الدخول",
+      "email_label": "البريد الإلكتروني",
+      "password_label": "كلمة المرور",
+      "submit": "تسجيل الدخول",
+      "forgot_password": "نسيت كلمة المرور؟",
+      "no_account": "ليس لديك حساب؟",
+      "sign_up_link": "سجّل مجاناً"
+    },
+    "register": {
+      "heading": "إنشاء حساب",
+      "name_label": "الاسم الكامل",
+      "email_label": "البريد الإلكتروني",
+      "password_label": "كلمة المرور",
+      "role_label": "أنا",
+      "role_client": "عميل",
+      "role_expert": "خبير",
+      "submit": "إنشاء حسابي",
+      "have_account": "لديك حساب بالفعل؟",
+      "login_link": "تسجيل الدخول"
+    }
+  },
+
+  "review": {
+    "heading": "تقييمات العملاء",
+    "write_review": "كتابة تقييم",
+    "rating_label": "التقييم",
+    "comment_label": "التعليق",
+    "submit": "إرسال",
+    "no_reviews": "لا تقييمات بعد. كن أول من يقيّم!"
+  },
+
+  "errors": {
+    "not_found": "الصفحة غير موجودة",
+    "not_found_description": "الصفحة التي تبحث عنها غير موجودة أو تم نقلها.",
+    "go_home": "العودة للرئيسية",
+    "server_error": "خطأ في الخادم",
+    "unauthorized": "يجب أن تكون مسجّلاً للدخول للوصول إلى هذه الصفحة."
+  }
+}

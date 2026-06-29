@@ -1,0 +1,155 @@
+{
+  "common": {
+    "app_name": "Jersey Marocco",
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "back": "Retour",
+    "next": "Suivant",
+    "see_all": "Voir tout",
+    "search_placeholder": "Rechercher..."
+  },
+
+  "nav": {
+    "home": "Accueil",
+    "catalog": "Catalogue",
+    "experts": "Experts",
+    "about": "À propos",
+    "contact": "Contact",
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "logout": "Déconnexion",
+    "my_profile": "Mon profil",
+    "my_orders": "Mes commandes",
+    "language_switcher_label": "Langue"
+  },
+
+  "landing": {
+    "hero": {
+      "welcome_message": "Bienvenue sur Jersey Marocco",
+      "tagline": "Votre destination premium pour les maillots authentiques et les experts du sport.",
+      "explore_catalog": "Explorer le catalogue",
+      "contact_expert": "Contacter un expert",
+      "discover_more": "En savoir plus"
+    },
+
+    "features": {
+      "heading": "Pourquoi nous choisir ?",
+      "authentic_jerseys": {
+        "title": "Maillots authentiques",
+        "description": "Des maillots officiels des meilleures équipes du monde, livrés directement au Maroc."
+      },
+      "expert_guidance": {
+        "title": "Conseils d'experts",
+        "description": "Chattez en direct avec nos experts passionnés pour trouver le maillot parfait."
+      },
+      "fast_delivery": {
+        "title": "Livraison rapide",
+        "description": "Livraison express partout au Maroc en 24 à 48 heures."
+      },
+      "secure_payment": {
+        "title": "Paiement sécurisé",
+        "description": "Transactions 100% sécurisées avec plusieurs méthodes de paiement acceptées."
+      }
+    },
+
+    "catalog_preview": {
+      "heading": "Nos dernières tenues",
+      "subheading": "Découvrez notre collection exclusive de maillots.",
+      "view_all_button": "Voir toute la collection"
+    },
+
+    "experts_preview": {
+      "heading": "Nos experts",
+      "subheading": "Des passionnés à votre service pour vous guider dans vos choix.",
+      "view_all_button": "Voir tous les experts"
+    },
+
+    "newsletter": {
+      "heading": "Restez informé",
+      "subheading": "Abonnez-vous pour recevoir nos dernières offres et actualités.",
+      "placeholder": "Votre adresse e-mail",
+      "subscribe_button": "S'abonner",
+      "success_message": "Merci ! Vous êtes maintenant abonné.",
+      "privacy_note": "Nous respectons votre vie privée."
+    },
+
+    "cta": {
+      "heading": "Prêt à trouver votre maillot idéal ?",
+      "subheading": "Rejoignez des milliers de fans qui nous font confiance.",
+      "primary_button": "Commencer maintenant",
+      "secondary_button": "En savoir plus"
+    }
+  },
+
+  "catalog": {
+    "heading": "Catalogue",
+    "filters": {
+      "all_sizes": "Toutes les tailles",
+      "price_range": "Fourchette de prix",
+      "sort_by": "Trier par",
+      "sort_newest": "Plus récents",
+      "sort_price_asc": "Prix croissant",
+      "sort_price_desc": "Prix décroissant",
+      "sort_rating": "Mieux notés",
+      "clear_filters": "Effacer les filtres"
+    },
+    "product_card": {
+      "add_to_cart": "Ajouter au panier",
+      "out_of_stock": "Rupture de stock",
+      "view_details": "Voir les détails"
+    },
+    "no_results": "Aucun produit ne correspond à votre recherche."
+  },
+
+  "experts": {
+    "heading": "Nos experts",
+    "send_message": "Envoyer un message",
+    "view_portfolio": "Voir le portfolio",
+    "languages_spoken": "Langues parlées",
+    "reviews_count": "{count, plural, one {# avis} other {# avis}}"
+  },
+
+  "auth": {
+    "login": {
+      "heading": "Connexion",
+      "email_label": "Adresse e-mail",
+      "password_label": "Mot de passe",
+      "submit": "Se connecter",
+      "forgot_password": "Mot de passe oublié ?",
+      "no_account": "Pas encore de compte ?",
+      "sign_up_link": "S'inscrire gratuitement"
+    },
+    "register": {
+      "heading": "Créer un compte",
+      "name_label": "Nom complet",
+      "email_label": "Adresse e-mail",
+      "password_label": "Mot de passe",
+      "role_label": "Je suis",
+      "role_client": "Client",
+      "role_expert": "Expert",
+      "submit": "Créer mon compte",
+      "have_account": "Déjà un compte ?",
+      "login_link": "Se connecter"
+    }
+  },
+
+  "review": {
+    "heading": "Avis clients",
+    "write_review": "Laisser un avis",
+    "rating_label": "Note",
+    "comment_label": "Commentaire",
+    "submit": "Soumettre",
+    "no_reviews": "Aucun avis pour le moment. Soyez le premier !"
+  },
+
+  "errors": {
+    "not_found": "Page non trouvée",
+    "not_found_description": "La page que vous cherchez n'existe pas ou a été déplacée.",
+    "go_home": "Retour à l'accueil",
+    "server_error": "Erreur serveur",
+    "unauthorized": "Vous devez être connecté pour accéder à cette page."
+  }
+}

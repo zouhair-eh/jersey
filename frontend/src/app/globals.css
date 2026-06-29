@@ -1,0 +1,201 @@
+/* ── Google Fonts ────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Jersey Store Design System ─────────────────────────────────────────── */
+:root {
+  /* Fonts */
+  --font-sans:       'Inter', system-ui, sans-serif;
+  --font-headline:   'Bebas Neue', sans-serif;
+  --font-inter:      'Inter', system-ui, sans-serif;
+  --font-cairo:      system-ui, sans-serif;
+
+  /* Backgrounds */
+  --bg-primary:      #0A0A0F;
+  --bg-secondary:    #12121A;
+  --bg-card:         #1A1A26;
+
+  /* Accents */
+  --accent-green:    #00FF87;
+  --accent-red:      #FF3D3D;
+  --accent-gold:     #C8A84B;
+  --whatsapp-green:  #25D366;
+
+  /* Text */
+  --text-primary:    #FFFFFF;
+  --text-secondary:  #A0A0B0;
+
+  /* Border */
+  --border-subtle:   rgba(255, 255, 255, 0.08);
+
+  /* Legacy compat */
+  --color-bg:         var(--bg-primary);
+  --color-surface:    var(--bg-secondary);
+  --color-border:     var(--border-subtle);
+  --color-text:       var(--text-primary);
+  --color-text-muted: var(--text-secondary);
+  --color-primary:    var(--accent-green);
+  --color-accent:     var(--accent-green);
+}
+
+/* ── Reset ───────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color:            var(--text-primary);
+  font-family:      var(--font-sans);
+  font-size:        1rem;
+  line-height:      1.6;
+  min-height:       100dvh;
+}
+
+/* ── Typography ─────────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.15;
+  font-weight: 700;
+  color: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb {
+  background: #2a2a3a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--accent-green); }
+
+/* ── Focus ring ──────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--accent-green);
+  outline-offset: 2px;
+}
+
+/* ── Utility: hide scrollbar but keep scroll ─────────────────────────────── */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── Keyframes ───────────────────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-ring {
+  0%   { transform: scale(1);   opacity: 0.6; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+@keyframes scroll-x {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes badge-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.7; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* ── Animation classes ───────────────────────────────────────────────────── */
+.animate-fade-up    { animation: fadeUp 0.5s ease both; }
+.animate-scroll-x   { animation: scroll-x 22s linear infinite; }
+.animate-badge-pulse { animation: badge-pulse 2s ease-in-out infinite; }
+.animate-float      { animation: float 3s ease-in-out infinite; }
+
+/* ── Glow helpers ────────────────────────────────────────────────────────── */
+.glow-green  { box-shadow: 0 0 20px rgba(0, 255, 135, 0.35); }
+.glow-green-lg { box-shadow: 0 0 40px rgba(0, 255, 135, 0.45); }
+.glow-red    { box-shadow: 0 0 15px rgba(255, 61, 61, 0.4); }
+.glow-gold   { box-shadow: 0 0 15px rgba(200, 168, 75, 0.4); }
+.glow-wa     { box-shadow: 0 0 28px rgba(37, 211, 102, 0.5); }
+ /* --- SPLASH SCREEN LOGIC --- */
+.welcome-splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+      217deg,
+      rgba(255, 159, 237),
+      rgba(255, 0, 0, 0) 70.71%
+    ),
+    linear-gradient(127deg, rgba(118, 164, 255), rgba(0, 255, 0, 0) 65%),
+    linear-gradient(336deg, rgba(255, 191, 138), rgba(0, 0, 255, 0) 70.71%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Bach tji f l-foug dial kolchi */
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+/* Had l-class ghadi n-zidoha b JS melli t-sali l-animation */
+.welcome-splash.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.welcome-splash .hello__div {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.welcome-splash .hello__svg {
+  width: 100%;
+  height: auto;
+}
+
+.welcome-splash .hello__path {
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+  stroke-width: 35px;
+  stroke-dasharray: 5800px;
+  stroke-dashoffset: 5800px;
+  animation: anim__hello 4s linear forwards; /* Rj3naha 4s bach tloada dghya */
+}
+
+@keyframes anim__hello {
+  0% { stroke-dashoffset: 5800px; }
+  15% { stroke-dashoffset: 5800px; }
+  100% { stroke-dashoffset: 0; }
+}

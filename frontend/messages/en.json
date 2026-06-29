@@ -1,0 +1,155 @@
+{
+  "common": {
+    "app_name": "Jersey Marocco",
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next",
+    "see_all": "See all",
+    "search_placeholder": "Search..."
+  },
+
+  "nav": {
+    "home": "Home",
+    "catalog": "Catalog",
+    "experts": "Experts",
+    "about": "About",
+    "contact": "Contact",
+    "login": "Log in",
+    "register": "Sign up",
+    "logout": "Log out",
+    "my_profile": "My profile",
+    "my_orders": "My orders",
+    "language_switcher_label": "Language"
+  },
+
+  "landing": {
+    "hero": {
+      "welcome_message": "Welcome to Jersey Marocco",
+      "tagline": "Your premium destination for authentic jerseys and sports experts.",
+      "explore_catalog": "Explore Catalog",
+      "contact_expert": "Contact an Expert",
+      "discover_more": "Discover More"
+    },
+
+    "features": {
+      "heading": "Why choose us?",
+      "authentic_jerseys": {
+        "title": "Authentic Jerseys",
+        "description": "Official jerseys from the world's top clubs, delivered straight to Morocco."
+      },
+      "expert_guidance": {
+        "title": "Expert Guidance",
+        "description": "Chat live with our passionate experts to find your perfect jersey."
+      },
+      "fast_delivery": {
+        "title": "Fast Delivery",
+        "description": "Express delivery anywhere in Morocco within 24 to 48 hours."
+      },
+      "secure_payment": {
+        "title": "Secure Payment",
+        "description": "100% secure transactions with multiple payment methods accepted."
+      }
+    },
+
+    "catalog_preview": {
+      "heading": "Latest Jerseys",
+      "subheading": "Explore our exclusive jersey collection.",
+      "view_all_button": "View Full Collection"
+    },
+
+    "experts_preview": {
+      "heading": "Our Experts",
+      "subheading": "Passionate specialists ready to guide your choices.",
+      "view_all_button": "View All Experts"
+    },
+
+    "newsletter": {
+      "heading": "Stay in the loop",
+      "subheading": "Subscribe to receive our latest deals and news.",
+      "placeholder": "Your email address",
+      "subscribe_button": "Subscribe",
+      "success_message": "Thank you! You are now subscribed.",
+      "privacy_note": "We respect your privacy."
+    },
+
+    "cta": {
+      "heading": "Ready to find your perfect jersey?",
+      "subheading": "Join thousands of fans who trust us.",
+      "primary_button": "Get Started",
+      "secondary_button": "Learn More"
+    }
+  },
+
+  "catalog": {
+    "heading": "Catalog",
+    "filters": {
+      "all_sizes": "All Sizes",
+      "price_range": "Price Range",
+      "sort_by": "Sort By",
+      "sort_newest": "Newest First",
+      "sort_price_asc": "Price: Low to High",
+      "sort_price_desc": "Price: High to Low",
+      "sort_rating": "Highest Rated",
+      "clear_filters": "Clear Filters"
+    },
+    "product_card": {
+      "add_to_cart": "Add to Cart",
+      "out_of_stock": "Out of Stock",
+      "view_details": "View Details"
+    },
+    "no_results": "No products match your search."
+  },
+
+  "experts": {
+    "heading": "Our Experts",
+    "send_message": "Send Message",
+    "view_portfolio": "View Portfolio",
+    "languages_spoken": "Languages Spoken",
+    "reviews_count": "{count, plural, one {# review} other {# reviews}}"
+  },
+
+  "auth": {
+    "login": {
+      "heading": "Log In",
+      "email_label": "Email address",
+      "password_label": "Password",
+      "submit": "Log in",
+      "forgot_password": "Forgot your password?",
+      "no_account": "Don't have an account?",
+      "sign_up_link": "Sign up for free"
+    },
+    "register": {
+      "heading": "Create Account",
+      "name_label": "Full name",
+      "email_label": "Email address",
+      "password_label": "Password",
+      "role_label": "I am a",
+      "role_client": "Client",
+      "role_expert": "Expert",
+      "submit": "Create my account",
+      "have_account": "Already have an account?",
+      "login_link": "Log in"
+    }
+  },
+
+  "review": {
+    "heading": "Customer Reviews",
+    "write_review": "Write a Review",
+    "rating_label": "Rating",
+    "comment_label": "Comment",
+    "submit": "Submit",
+    "no_reviews": "No reviews yet. Be the first!"
+  },
+
+  "errors": {
+    "not_found": "Page Not Found",
+    "not_found_description": "The page you are looking for doesn't exist or has been moved.",
+    "go_home": "Back to Home",
+    "server_error": "Server Error",
+    "unauthorized": "You need to be logged in to access this page."
+  }
+}
